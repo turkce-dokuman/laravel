@@ -15,4 +15,4 @@ Servis sağlayıcılarında `Register` yönteminde önce servis kaydedilir ve `b
 Laravelde sunulan çoğu önemli özellik servis sağlayıcıları tarafından yüklenmektedir. Bunlardan birkaçı: kuyruklama(queue), veritabanı, rotalar gibi bileşenlerdir.
 
 ### Route 
-Rotalar `RouteServiceProvider.php` servis sağlayıcısında yüklenir.   
+Rotalar `RouteServiceProvider.php` servis sağlayıcısında yüklenir. Servis sağlayıcıları kaydedilip yüklendikten sonra isteği önce yönlendirici sonrada rotaya verir. Rotada eğer middleware tanımlıysa middleware'den geçer middlewarede belirtilen şartlara uyarsa rotada belirtilen `Controller` veya `callback` çalıştırlır.  
