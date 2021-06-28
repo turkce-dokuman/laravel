@@ -48,4 +48,4 @@ Diğer yapılandırmalar kök dizindeki `.env` dosyasında tutulmaktadır dosyay
 ```
 `.env` dosyasına 3. taraf kullanıcılarının ulaşmaması gerekir bunu ilerleyen zamanlarda ele almaya çalışacağım şimdi uygulamamıza merhaba diyelim :)).
 
-[Yaşam Döngüsü](./yasam-dongusu.md)
+[Yaşam Döngüsü](./yasam_dongusu.md)
