@@ -6,4 +6,4 @@ Laravel'de Türkçeye çevirdiğim konuları hem [blogum](https://ahmetbarut.net
 * [Yaşam Döngüsü](yasam_dongusu.md)
 * [Dizin Yapısı](dizin_yapisi.md)
 * [Laravel Mail](mail.md)
-* * [Laravel Paket Yayınlama](laravel_paket_yayinlama.md)
+* [Laravel Paket Yayınlama](laravel_paket_yayinlama.md)
