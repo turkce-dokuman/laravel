@@ -12,10 +12,11 @@
       - [Model Ve Migration](#model-ve-migration)
         - [Migrations](#migrations)
 - [Yayınlama](#yayınlama)
+- [Not](#not)
 
 
 # Laravel Paket Yayınlama
-Laravel'de bir paket nasıl yazılır belki çoğunlukla belki merak etmişsinizdir. Burda en ince ayrıntısına kadar anlatmaya çalışacağım.
+Laravel'de bir paket nasıl yazılır belki çoğunlukla belki merak etmişsinizdir. Burda en ince ayrıntısına kadar anlatmaya çalışacağım. Bu adım tamamen PHP'ye odaklıdır eğer daha önce hiç paket yayınlamadıysanız bu adımı mutlaka okuyun aksi takdirde [buraya gidin.](#laravel-i̇çin-paket-geliştirme)
 
 # Gereklilikler
 Listedekileri bilmiyorsanız öncelikle ne olduğunu birazda olsa öğrenmeniz gerekli çünkü onlar çok önemli, 2 ve 3. adımda 1 harfi yanlış yazsanız çok uğraşabilirsiniz(Çok yaşamıştım)
@@ -429,3 +430,6 @@ Ardından paket'i açmış olduğunuz repositorye pushlayın.
 Onu yaptıktan sonra `packagist` hesabı açmalısınız. Github ile'de oluşturabilirsiniz veya [burdan](https://packagist.org/register/)
 
 onu da açtıktan sonra [`submit`](https://packagist.org/packages/submit) butonuna basın. Orda 1 adet input göreceksiniz oraya paketinizin repository adresini yapıştırıp `check` diyin ardından onay için birdaha basın ve paketiniz yayında oluyor.
+
+# Not
+Paketinizi bir etiket ile sabitlemezseniz, Packagist otomatik olarak varsayılan `branch`ten çeker bu da verilen son güncellemeler için sorun çıkarabilir bu nedenle stabil paketlerinizi etiket ile sabitleyin. `git tag` veya github kullanıyorsanız create relase var ordan yapabilirsiniz.
