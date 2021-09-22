@@ -160,7 +160,7 @@ Eğer buraya kadar herşey tamamsa ve sorun yoksa artık paketimiz için gereken
 
 # Laravel İçin Paket Geliştirme
 Şimdi `router`, `view`, `migration`,`model` ve `controller` dosyası olan bir paket yazalım. Bu paketimiz eklenmiş gönderileri listeleyen bir paket olsun. Biliyorum onun için pakete gerek yok ama neyin nasıl kullanılması gerektiğini göstermenin en iyi yolu bu olduğunu düşünüyorum. 
-
+[Yayınladığım Paket](https://github.com/ahmetbarut/laravel-paket-yayinlama)
 
 ## Paket Yazmaya Başlangıç
 Yukarda bahsetmiştim, direk bu bölüme gelenler için birdaha söyleyeyim. `src` veya namespace'te işaretlediğiniz dizinin içindeki dosyalar dışardan erişilir yani atıyorum paketi yayınladık `src` dışında bizim `config.php` diye bir dosyamız var ve buna `Controller` üzerinden erişmek istiyoruz burda ilk namespace gelir ama orası kapsam dışı olduğu için oraya erişemeyiz bu yüzden erişime açık, erişilmesi istediğimiz dosyaları `src` içine yazarız. Erişilmesini istiyorsanız da yine `src` içinden dahil etmelisiniz. 
