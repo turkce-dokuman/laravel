@@ -16,7 +16,7 @@
 
 
 # Laravel Paket Yayınlama
-Laravel'de bir paket nasıl yazılır belki çoğunlukla belki merak etmişsinizdir. Burda en ince ayrıntısına kadar anlatmaya çalışacağım. Bu adım tamamen PHP'ye odaklıdır eğer daha önce hiç paket yayınlamadıysanız bu adımı mutlaka okuyun aksi takdirde [buraya gidin.](#laravel-i̇çin-paket-geliştirme)
+Laravel'de bir paket nasıl yazılır çoğunlukla belki merak etmişsinizdir. Burda en ince ayrıntısına kadar anlatmaya çalışacağım. Bu adım tamamen PHP'ye odaklıdır eğer daha önce hiç paket yayınlamadıysanız bu adımı mutlaka okuyun aksi takdirde [buraya gidin.](#laravel-i̇çin-paket-geliştirme)
 
 # Gereklilikler
 Listedekileri bilmiyorsanız öncelikle ne olduğunu birazda olsa öğrenmeniz gerekli çünkü onlar çok önemli, 2 ve 3. adımda 1 harfi yanlış yazsanız çok uğraşabilirsiniz(Çok yaşamıştım)
