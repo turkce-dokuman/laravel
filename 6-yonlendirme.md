@@ -524,11 +524,3 @@ Laravel rotalarınızda, bir rota bulunamadığında, yedek rotalarınızı kull
 ```
 
 > Yedek rota, her zaman en sonda olmalıdır.
-
-### Bağımlılık Enjeksiyonu Ve Parametreler
-
-Laravel Rota bileşeninin diğer en güzel özelliğinden biriside, parametrelerin bağımlılık enjeksiyonu olarak kullanabilmemizi sağlamasıdır, en güzel özelliklerden birisi de bu.
-
-```
-
-```
