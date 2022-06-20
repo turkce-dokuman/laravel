@@ -4,9 +4,9 @@ Böyle belgeler yazmayı yazılıma başladığımdan beri istiyordum ve yaklaş
 
 
 
-Eğer sizde bu konuda destek vermek isterseniz eklediğiniz yeni içerikleri pull request ile kabul ederim.\
-\[Repo]\([https://github.com/turkce-dokuman/laravel](https://github.com/turkce-dokuman/laravel))
+Eğer sizde bu konuda destek vermek isterseniz eklediğiniz yeni içerikleri pull request ile kabul ederim.
 
+[Repo](https://github.com/turkce-dokuman/laravel)\
 
 
 ### Nasıl Yapılır Bölümü

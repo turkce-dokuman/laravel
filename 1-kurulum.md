@@ -1,13 +1,16 @@
 # Kurulum
 
-* [Neden Laravel](1-kurulum.md#neden-laravel)
-* [Laravel'i Kurmaya Başlayalım](1-kurulum.md#laraveli-kurmaya-başlayalım)
-  * [composer ile kurulum](1-kurulum.md#composer-ile-kurulum)
-  * [Laravel installer ile Kurulum](1-kurulum.md#laravel-installer-ile-kurulum)
+- [Neden Laravel](#neden-laravel)
+- [Laravel'i Kurmaya Başlayalım](#laraveli-kurmaya-başlayalım)
+  - [composer ile kurulum](#composer-ile-kurulum)
+  - [Laravel installer ile Kurulum](#laravel-installer-ile-kurulum)
 
 ## Neden Laravel
 
-Laravel, son zamanlarda oldukça gelişen ve web geliştirme için çok fazla kolaylıklar sağlaması tercih sebeplerinden biri. Eğer daha önce web geliştirmeyi ileriye taşıdıysanız, sayacağım birkaç özelliği bilirsiniz. Laravel çerçevesi, kutudan çıkar çıkmaz; cron, mail, kuyruklama, veritabanı desteği ve en önemlisi dokümanı çok iyi. Ayrıca Laravel'in topluluğu oldukça büyük ve sorunları çözmek veya hazır paketleri kullanmak çok kolay ve laravel popüler javascript çerçeveleriyle oldukça iyi çalışır.
+Laravel, son zamanlarda oldukça gelişen ve web geliştirme için çok fazla kolaylıklar sağlaması tercih sebeplerinden biri.
+Eğer daha önce web geliştirmeyi ileriye taşıdıysanız, sayacağım birkaç özelliği bilirsiniz.
+Laravel çerçevesi, kutudan çıkar çıkmaz; cron, mail, kuyruklama, veritabanı desteği ve en önemlisi dokümanı çok iyi.
+Ayrıca Laravel'in topluluğu oldukça büyük ve sorunları çözmek veya hazır paketleri kullanmak çok kolay ve laravel popüler javascript çerçeveleriyle oldukça iyi çalışır.
 
 ## Laravel'i Kurmaya Başlayalım
 
@@ -18,13 +21,15 @@ Bu başlık altında, iki kurulum yönteminden bahsedeceğim.
 
 ### composer ile kurulum
 
-Composer, `php`'nin bağımlılıklarını yönetmek için kullanılan bir paket yöneticisi. Composerin bilgisayarınızda kurulu olması gerekiyor detaylı bilgi için `https://getcomposer.org` Composer'i kurduktan sonra kullanabilmek için komut satırına ihtiyacınız olacak.
+Composer, `php`'nin bağımlılıklarını yönetmek için kullanılan bir paket yöneticisi.
+Composerin bilgisayarınızda kurulu olması gerekiyor detaylı bilgi için `https://getcomposer.org`
+Composer'i kurduktan sonra kullanabilmek için komut satırına ihtiyacınız olacak.
 
 Komut satırına `composer`diyerek çalıştıramıyorsanız;
 
-* Mac os işletim sistemi: `$HOME/.composer/vendor/bin`
-* Windows: `%USERPROFILE%\AppData\Roaming\Composer\vendor\bin`
-* GNU / Linux Dağıtımları: `$HOME/.config/composer/vendor/bin` veya `$HOME/.composer/vendor/bin`
+- Mac os işletim sistemi: `$HOME/.composer/vendor/bin`
+- Windows: `%USERPROFILE%\AppData\Roaming\Composer\vendor\bin`
+- GNU / Linux Dağıtımları: `$HOME/.config/composer/vendor/bin` veya `$HOME/.composer/vendor/bin`
 
 Laravel'i kuralım
 

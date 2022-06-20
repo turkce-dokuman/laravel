@@ -1,6 +1,6 @@
 # Routing (Yönlendirme)
 
-* ### [Temel Yönlendirme](6-yonlendirme.md#temel-yonlendirme)
+- ## [Temel Yönlendirme](#temel-yonlendirme)
 
 ## Temel Yönlendirme (Basic Routing)
 
@@ -35,7 +35,9 @@ localhost'ta çalıştığınızı varsayıyorum. `http://localhost:8000/ilk-rot
 
 ## Varsayılan Yönlendirme Dosyaları (Default Route Files)
 
-Web arayüzü için `web.php` kullanılıyor. web arayüzünde, `web` ara katman yazılım(middleware) grubunu kullanıyor. Middleware kafanızı karıştırdıysa sonraki bölümde ondan bahsetmiş olacağım. Web ara katmanı grubuna dahil olanlar, tarayıcıdan uygulamamızı ziyaret ettiklerinde gereken bazı güvenlik önlemlerini alır. Web grubunda kullanılan ara katmanlar:
+Web arayüzü için `web.php` kullanılıyor. web arayüzünde, `web` ara katman yazılım(middleware) grubunu kullanıyor.
+Middleware kafanızı karıştırdıysa sonraki bölümde ondan bahsetmiş olacağım. Web ara katmanı grubuna dahil olanlar, tarayıcıdan uygulamamızı ziyaret ettiklerinde gereken bazı güvenlik önlemlerini alır.
+Web grubunda kullanılan ara katmanlar:
 
 ```php
     'web' => [
@@ -111,10 +113,12 @@ Bazı durumlarda bir rotayı başka bir rotaya yönlendirmemiz gerekebiliyor. Ö
 
 ## Görünüm Yönlendirme (View Routing)
 
-Sadece görünüm yönlendirmemizi gerektiren durumlar olabilir. `Route::view`, yöntemi bunun için yeterlidir. `Route::view`, 3 parametre alır, 1. parametre rota, 2. parametre görünüm adı`(resources/views/anasayfa.blade.php)`, 3. parametre ise görünüme veri göndereceksek, gönderilecek veri içeriği.
+Sadece görünüm yönlendirmemizi gerektiren durumlar olabilir. `Route::view`, yöntemi bunun için yeterlidir.
+`Route::view`, 3 parametre alır, 1. parametre rota, 2. parametre görünüm adı`(resources/views/anasayfa.blade.php)`, 3. parametre ise görünüme veri göndereceksek, gönderilecek veri içeriği.
 
 ```php
 Route::view('/anasayfa', 'anasayfa', ['mesaj' => 'merhaba dünya!']);
+
 ```
 
 > Yönlendirme rotalarında rota parametreleri kullanılırken, aşağıdaki parametreler Laravel tarafından rezerve edilir ve kullanılamaz: `destination` ve `status`.
@@ -178,6 +182,7 @@ public function boot()
 {
     Route::pattern('kullaniciAdi', '[a-z]+');
 }
+
 ```
 
 ```php
@@ -272,6 +277,7 @@ Route::prefix('kullanicilar')->group(function () {
         // http://localhost/kullanicilar/gonderiler/2
     });
 });
+
 ```
 
 Laravel rota bileşeni, eğik çizgilerle birleştirilmiş rotaların gruplandırılmasını sağlar. Yani sizin tanımladığınız rotanın başına veya sonuna eğik çizgi koymanıza gerek yok.
@@ -318,7 +324,8 @@ Route::group(
 
 ### Controller Ataması (Controllers)
 
-Bu özellik laravel 9 ile geldi. Bu özellik, bir rotaya controller ataması yapmak için kullanılır. Rotaya `controller` yöntemin kullanarak atama yaparsanız, 2. parametre olarak `controller` belirtmek zorunda kalmayacaksınız.
+Bu özellik laravel 9 ile geldi. Bu özellik, bir rotaya controller ataması yapmak için kullanılır.
+Rotaya `controller` yöntemin kullanarak atama yaparsanız, 2. parametre olarak `controller` belirtmek zorunda kalmayacaksınız.
 
 ```php
     use App\Http\Controllers\KullanicilarController;
@@ -425,7 +432,7 @@ Bu durumda artık rotalarda `slug` kolonu üzerinden sorgu yapılacaktır.
 
 ### Kapsam Belirleme (Scoping)
 
-Şimdi rotalarda denk gelmişsinizdir, örneğin github, mesela githubda bir kullanıcının profiline girdiğinizde burada sadece o kullanıcıya ait repositoriler listeleniyor, /kullanici\_adi/repository, laravel rotalarında normal durumlarda böyle gelmez. Mesela a kullanıcısının profiline girip repo yerine b kullanıcısının repo adını yazdınız diyelim bu rota çalışır(githubda öyle bişey yok sadece örnek :)).
+Şimdi rotalarda denk gelmişsinizdir, örneğin github, mesela githubda bir kullanıcının profiline girdiğinizde burada sadece o kullanıcıya ait repositoriler listeleniyor, /kullanici_adi/repository, laravel rotalarında normal durumlarda böyle gelmez. Mesela a kullanıcısının profiline girip repo yerine b kullanıcısının repo adını yazdınız diyelim bu rota çalışır(githubda öyle bişey yok sadece örnek :)).
 
 Laravelde bunu engellemek için kapsam belirlenmesi gerekmektedir.
 
@@ -491,6 +498,7 @@ PHP 8.1 ile gelen `enum` özelliği ile, rotalarınızda enum parametreleri kull
 ```
 
 ```php
+
     use App\Enums\PostType;
     use Illuminate\Support\Facades\Route;
 
