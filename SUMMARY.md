@@ -1,6 +1,6 @@
 # Table of contents
 
-* [😄 Laravel Türkçe Doküman](README.md)
+* [🚀 Laravel Türkçe Doküman](README.md)
 * [Kurulum](1-kurulum.md)
 * [Yapılandırma](2-yapilandirma.md)
 * [Dizin Yapısı](3-dizin-yapisi.md)
