@@ -2,7 +2,7 @@
 
 - ## [Temel Yönlendirme](#temel-yonlendirme)
 
-## Temel Yönlendirme
+## Temel Yönlendirme (Basic Routing)
 
 Laravel'in en güzel yanlarından biriside basit bir yönlendirme bileşeni sunmasıdır. Kullanımı oldukça basit ve kolaydır. Ayrıca sözdizimi, kolay ve çok kapsamlıdır.
 
@@ -33,7 +33,7 @@ Rotaları `controller` ile kullanma:
 
 localhost'ta çalıştığınızı varsayıyorum. `http://localhost:8000/ilk-rotamiz` urline girdiğinizde `Merhaba Dünya !` mesajı ile karşılaşacaksınız. İşte bu kadar! Laravel de rota tanımladınız.
 
-## Varsayılan Yönlendirme Dosyaları
+## Varsayılan Yönlendirme Dosyaları (Default Route Files)
 
 Web arayüzü için `web.php` kullanılıyor. web arayüzünde, `web` ara katman yazılım(middleware) grubunu kullanıyor.
 Middleware kafanızı karıştırdıysa sonraki bölümde ondan bahsetmiş olacağım. Web ara katmanı grubuna dahil olanlar, tarayıcıdan uygulamamızı ziyaret ettiklerinde gereken bazı güvenlik önlemlerini alır.
@@ -51,7 +51,7 @@ Web grubunda kullanılan ara katmanlar:
         ],
 ```
 
-## Kullanılabilir Yönlendirme Yöntemleri
+## Kullanılabilir Yönlendirme Yöntemleri (Available Route Methods)
 
 Laravel rotalarını kullanırken aşağıdaki HTTP yöntemlerini kullanabilmenize izin verir.
 
@@ -75,7 +75,7 @@ Belirli HTTP isteklerine yanıt veren bir rota kullanmak isteyebilirsiniz bunun 
     });
 ```
 
-## Bağımlılık Enjeksiyonu
+## Bağımlılık Enjeksiyonu (Dependency Injection)
 
 Laravel rotalarından bahsederken çok güzel özellikleri olduğundan bahsetmişim. En güzel özelliklerinden bir tanesi de `bağımlılık enjeksiyonudur`. Laravel bağımlılık enjeksiyonlarını çok iyi ve geliştiricilerin işini oldukça kolaylaşıtrmaktadır.
 
@@ -97,7 +97,7 @@ Route::get('/', function (Request $request) {
 <form method="POST" action="/profile">@csrf ...</form>
 ```
 
-## Rotaları Yönlendirme
+## Rotaları Yönlendirme (Routing)
 
 Bazı durumlarda bir rotayı başka bir rotaya yönlendirmemiz gerekebiliyor. Örneğin kullanıcı sayfayı ziyaret ettiğinde kullanıcıyı `/anasayfa` rotasına yönlendirmek istiyoruz bu durumda ek kontrol yapmak yerine, laravel bize `Route::redirect` yöntemini sunuyor:
 
@@ -111,7 +111,7 @@ Bazı durumlarda bir rotayı başka bir rotaya yönlendirmemiz gerekebiliyor. Ö
 
 `Route::redirect` yöntemi, 3. parametrede varsayılan olarak `302` HTTP durum kodunu döndürür. Bunu isteğe bağlı olarak değiştirebilirsiniz.
 
-## Görünüm(View) Yönlendirme
+## Görünüm Yönlendirme (View Routing)
 
 Sadece görünüm yönlendirmemizi gerektiren durumlar olabilir. `Route::view`, yöntemi bunun için yeterlidir.
 `Route::view`, 3 parametre alır, 1. parametre rota, 2. parametre görünüm adı`(resources/views/anasayfa.blade.php)`, 3. parametre ise görünüme veri göndereceksek, gönderilecek veri içeriği.
@@ -123,11 +123,11 @@ Route::view('/anasayfa', 'anasayfa', ['mesaj' => 'merhaba dünya!']);
 
 > Yönlendirme rotalarında rota parametreleri kullanılırken, aşağıdaki parametreler Laravel tarafından rezerve edilir ve kullanılamaz: `destination` ve `status`.
 
-## Rota Parametreleri
+## Rota Parametreleri (Route Parameters)
 
 Rotada parametre göndermeniz gerekebilir veya gelen parametreleri okumak. Laravel de parametre belirlemek için tırnaklar içinde süslü parantez `{}` kullanılır. Parametre tanımalamaları alt çizgi `_` ile başlayabilir. Url de verilen parametre adı ne ise yöntem içinden alırken aynı isimle almak zorundayız. Örn:
 
-### Zorunlu Parametreler
+### Zorunlu Parametreler (Required Parameters)
 
 ```php
     Route::get('/kullanici/{id}', function ($id) {
@@ -145,7 +145,7 @@ Laravel rotasında, parametre kısıtlılığı yoktur, istediğiniz kadar param
 
 > Rotalar sıralarına göre enjekte edilir.
 
-### Opsiyonel Parametreler
+### Opsiyonel Parametreler (Optional Parameters)
 
 Bazen parametre boş gelebilir laravel rotalarında parametre tanımladıktan sonra `{parametre?}` parametre isminin souna soru işareti `?` yazılır ve parametreye karşılık gelen değişkene varsayılan değer atanmalıdır aksi takdirde hatayla karşılaşırsınız:
 
@@ -155,7 +155,7 @@ Bazen parametre boş gelebilir laravel rotalarında parametre tanımladıktan so
 });
 ```
 
-## Parametre Kısıtlama
+## Parametre Kısıtlama (Parameter Restrictions)
 
 Bazı durumlarda parametreler için kısıtlama koymak isteyebilirsiniz, mesela kullanıcıdan gelen `kullanıcı adı` parametresinde sadece harfler kullanmak isteyebilirsiniz, bunun için `where` yöntemini kullanabilirsiniz:
 
@@ -167,7 +167,7 @@ Bazı durumlarda parametreler için kısıtlama koymak isteyebilirsiniz, mesela 
 
 Gelen istekte belirtilen kurala uymuyorsa, 404 sayfası döndürülür.
 
-### Küresel kısıtlama
+### Küresel kısıtlama (Global Restrictions)
 
 Rotalanıza atadığınız kuralı her seferinde tanımlamak istemeyebilirsiniz, bunun için `app/Providers/RouteServiceProviders.php` dosyasının `boot` yönteminde tanımlayabilirsiniz. Bunun için `Route::pattern` yöntemini kullanabilirsiniz:
 
@@ -193,7 +193,7 @@ public function boot()
 
 Artık `kullaniciAdi` parametresi, bütün rotalar için sadece harfler içerebilir.
 
-## Adlandırılmış Rotalar
+## Adlandırılmış Rotalar (Named Routes)
 
 Rotalarınızı kullanırken sürekli uzun uzun rota isimleri yazmak ve en ufak değişiklikte bunları değiştirmek zorunda kalmamız gerçekten çok bunaltıcı olabilir. Bu durumda laravel bize `name` yöntemini sunar ve bu yönteme tanımlanan rota isminden rotaya ulaşabiliriz.
 
@@ -229,7 +229,7 @@ Biz bu rotayı kullanmak istediğimizde ise `route` yardımcı fonksiyonunu kull
 
 şeklinde çalışır.
 
-### Rotalarda Query String Parametre Kullanmak
+### Rotalarda Query String Parametre Kullanmak (Query String Parameters)
 
 Rotada sadece parametre değil, query string paramterleri de kullanmak isteyebiliriz.
 
@@ -245,7 +245,7 @@ Rotada sadece parametre değil, query string paramterleri de kullanmak isteyebil
     // http://localhost/kullanicilar/2?durum=aktif
 ```
 
-### Rotalara Yönlendirme
+### Rotalara Yönlendirme (Redirecting)
 
 Bazı durumlarda çoğu yerde rotalara yönlendirme yaparak kodu yazmışsınızdır, sürekli bütün url'i yazmak ve en ufak değişiklikte değiştirmek zorunda kalabiliriz. Bu durumda :
 
@@ -263,7 +263,7 @@ Route::get('/kullanicilar', function () {
 
 Bu şekilde `/kullanicilar` sayfasına yönlendirme yapmış olduk.
 
-## Rota Grupları
+## Rota Grupları (Route Groups)
 
 Birden fazla rotamız var ve bu rotalara tek seferde ara katman veya ön ek koymak isteyebiliriz, bu durumda `group` yöntemini kullanabiliriz.
 
@@ -282,7 +282,7 @@ Route::prefix('kullanicilar')->group(function () {
 
 Laravel rota bileşeni, eğik çizgilerle birleştirilmiş rotaların gruplandırılmasını sağlar. Yani sizin tanımladığınız rotanın başına veya sonuna eğik çizgi koymanıza gerek yok.
 
-### Rotalara Ara Katman Atamak
+### Rotalara Ara Katman Atamak (Routes Middleware)
 
 Ara katmanları merak ediyorsanız, `middleware` bölümüne gidiniz.
 
@@ -322,7 +322,7 @@ Route::group(
 });
 ```
 
-### Controller Ataması
+### Controller Ataması (Controllers)
 
 Bu özellik laravel 9 ile geldi. Bu özellik, bir rotaya controller ataması yapmak için kullanılır.
 Rotaya `controller` yöntemin kullanarak atama yaparsanız, 2. parametre olarak `controller` belirtmek zorunda kalmayacaksınız.
@@ -337,7 +337,7 @@ Rotaya `controller` yöntemin kullanarak atama yaparsanız, 2. parametre olarak 
     });
 ```
 
-### Alt Alan Adı Yönlendirmesi
+### Alt Alan Adı Yönlendirmesi (domain alias)
 
 Laravel'de `subdomain` yöntemi ile bir rotaya alt alan adı yönlendirmesi yapabilirsiniz. Bunun için sunucu yapılandırmanızın buna müsade etmesi gereklidir.
 
@@ -369,7 +369,7 @@ Route::name('kullanicilar.')->group(function () {
 
 `kullanicilar.gonderiler` adıyla bir rota ismi oluşturulmuştur.
 
-## Rotalara Model Bağlama
+## Rotalara Model Bağlama (Routes Model Binding)
 
 Laravel Route bileşeninin en güzel özelliklerinden bir tanesine daha geldik, bu özellik, bir rotaya model bağlaması yapmak için kullanılır. Buna `model binding` denir. Bu bölüm için `eloquent` bölümünü birazda olsa bilmeniz gereklidir, aksi takdirde sizin için anlamsız olabilir.
 
@@ -416,7 +416,7 @@ Tabikide bu kodla işiniz olmaz amacım daha iyi anlatabilmektir, sakın ola kod
 
 Şimdi ise 3. parametreye `slug` değerini iletip, slug üzerinden sorgu yapılacaktır.
 
-### Kolonu Özelleştirme
+### Kolonu Özelleştirme (Explicit Binding)
 
 Yukarıda kolon belirtme örneğini gösterdim, ama her rota için belirtmek zahmetli olabilir, bunun için `Post` modelimize `getRouteKeyName` yöntemi ekleyip hangi kolon üzerinden arama yapmasını söylebiliriz.
 
@@ -450,7 +450,7 @@ Laravelde bunu engellemek için kapsam belirlenmesi gerekmektedir.
 
 > Scope Binding kullanmak istediğiniz model dosyasında, bir `relationship` ile bağlantı kurduktan sonra `scopeBindings` yöntemini kullanın.
 
-## Rota Hatalarını Özelleştirme
+## Rota Hatalarını Özelleştirme (Error Handling)
 
 Normal durumlarda örtük bağlamada kayıt bulamazsa 404 hatası dönecektir, ama bunu değiştirmek istiyorsunuz bunun için `missing` yöntemi kullanılabilir.
 
@@ -481,7 +481,7 @@ Veya geriye bir şablon döndürebiliriz:
         });
 ```
 
-## Rota Enum Parametreleri
+## Rota Enum Parametreleri (Route Enum Parameters)
 
 PHP 8.1 ile gelen `enum` özelliği ile, rotalarınızda enum parametreleri kullanılabilir. Laravel rotasında ilgil enum değeri varsa çalışır yoksa 404 döner.
 
