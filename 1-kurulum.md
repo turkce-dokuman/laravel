@@ -1,4 +1,4 @@
-#
+# Kurulum
 
 - [Neden Laravel](#neden-laravel)
 - [Laravel'i Kurmaya Başlayalım](#laraveli-kurmaya-başlayalım)

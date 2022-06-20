@@ -1,4 +1,4 @@
-# Configuration
+# Yapılandırma
 
 Laravel'in en güzel yanlarından biride kutudan çıkar çıkmaz kullanıma hazır olmasıdır. Laravel'i kurduktan sonra çok fazla bir yapılandırmaya ihtiyaç duymaz.
 

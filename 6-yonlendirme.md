@@ -1,4 +1,4 @@
-# Route
+# Routing (Yönlendirme)
 
 - ## [Temel Yönlendirme](#temel-yonlendirme)
 

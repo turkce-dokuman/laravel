@@ -5,7 +5,7 @@ Laravel'de Türkçeye çevirdiğim konuları hem [blogum](https://ahmetbarut.net
 ## Paylaşmış Olduğum Konular
 
 * [Kurulum](1-kurulum.md)
-* [Kurulum](2-yapilandirma.md)
+* [Yapılandırma](2-yapilandirma.md)
 * [Dizin Yapısı](3-dizin-yapisi.md)
 * [Yaşam Döngüsü](4-yasam-dongusu.md)
 * [Service Providers](5-servis-saglayicilar.md)
