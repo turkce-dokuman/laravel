@@ -17,7 +17,7 @@ Laravele aşinaysanız, bu dökümana destek olmak için katkıda bulunabilirsin
 7. [Middleware](middleware.md)
 8. [Controllers](controllers.md)
 
-## Contributing
+## Katkıda Bulunma
 
 İlk öncelikle repoyu [forklayın](https://github.com/turkce-dokuman/laravel/fork)
 
@@ -25,4 +25,4 @@ Sonra repoyu klonlayıp, gerekli değişiklikleri yapın.
 
 ve son olarak, değişikliklerinizi göndermek için bir pull request oluşturun.
 
-## [License](license.md)
+## [Lisans](license.md)
