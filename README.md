@@ -1,14 +1,28 @@
-# 😄 Laravel Türkçe Doküman
+# Laravel Türkçe Doküman
 
-Böyle belgeler yazmayı yazılıma başladığımdan beri istiyordum ve yaklaşık 2 yıldır bunu yapmaya çalışıyorum. Bundaki amacım yazılıma yeni başlayıp; yabancı dil bilmeyen arkadaşlar için laravel öğrenimini en kolaya indirgemektir. Zaten laravel framewrok'ü başlangıç için çok zor sayılmaz ve ilerledikçe daha da güzel bir hal almaya başlıyor.
+Laravel, popüler bir PHP framework'üdür ve web uygulamaları geliştirme işlemlerini hızlandıran ve kolaylaştıran özellikleri vardır. Bu doküman, Türkçe kaynakları arttırmak amacıyla yazılmıştır ve Laravel topluluğuna yöneliktir. Bu doküman, Laravel'in temel özelliklerini ve önemli kavramlarını anlatacak ve okuyuculara bu framework'ü kullanmayı öğretmeyi hedeflemektedir. Bu doküman, Laravel ile ilgili bilgi sahibi olmayanlar için de yardımcı olacaktır ve bu framework'ü ilk kez kullanmaya başlamak isteyenler için de işe yarayacaktır. Umarım bu doküman, Laravel topluluğunu büyütmekte ve Türkçe kaynakları arttırmakta yardımcı olur.
 
+Laravele aşinaysanız, bu dökümana destek olmak için katkıda bulunabilirsiniz. Buraya yazacağınız birkaç satır bile çok önemlidir.
 
+## İçindekiler
 
-Eğer sizde bu konuda destek vermek isterseniz eklediğiniz yeni içerikleri pull request ile kabul ederim.
+Şimdiye kadar yazılan bölümler:
 
-[Repo](https://github.com/turkce-dokuman/laravel)\
+1. [Installation](installation.md)
+2. [Directory Structure](structure.md)
+3. [Configuration](configuration.md)
+4. [Lifecycle](lifecycle.md)
+5. [Service Providers](providers.md)
+6. [Routing](routing.md)
+7. [Middleware](middleware.md)
+8. [Controllers](controllers.md)
 
+## Contributing
 
-### Nasıl Yapılır Bölümü
+İlk öncelikle repoyu [forklayın](https://github.com/turkce-dokuman/laravel/fork)
 
-* [Laravel Paket Yazma Ve Yayınlama](nasil-yapilir/laravel\_paket\_yayinlama.md)
+Sonra repoyu klonlayıp, gerekli değişiklikleri yapın.
+
+ve son olarak, değişikliklerinizi göndermek için bir pull request oluşturun.
+
+## [License](license.md)
