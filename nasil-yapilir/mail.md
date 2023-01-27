@@ -1,50 +1,58 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# mail
 
-# Mail
+![](https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg)
+
+## Mail
+
 > kaynak [Larvel Mail](https://laravel.com/docs/7.x/mail)
 
-* ### [Giriş](#giriş-1) 
-  * ##### [Konfigürasyon](#konfigürasyon-1)
-  * ##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
-* ### [Mail Oluşturma](#mail-oluşturma-1)
-* ### [Mail Yazma](#mail-yazma-1)
-    * ##### [Göndereni Yapılandırma](#göndereni-Yapılandırma-1)
-    * ##### [Görünümü Yapılandırma](#görünümü-yapılandırma-1)
-    * ##### [Düz Metin E-postaları](#düz-metin-e-postaları-1)
-    * ##### [Veriyi gör](#veriyi-gör-1)
-    * ##### [Ekler](#ekler-1)
-    * ##### [Satır İçi Ekler](#ekler-2)
-* ### [Mail Gönderme](#mail-gönderme-1)
-    * ##### [Kuyruk (queue) Postası](#kuyruk-postsası-1)
+* #### [Giriş](mail.md#giriş-1)
+  * [**Konfigürasyon**](mail.md#konfigürasyon-1)
+  * [**Sürücü Önkoşulları**](mail.md#sürücü-önkoşulları-1)
+* #### [Mail Oluşturma](mail.md#mail-oluşturma-1)
+* #### [Mail Yazma](mail.md#mail-yazma-1)
+  * [**Göndereni Yapılandırma**](mail.md#göndereni-Yapılandırma-1)
+  * [**Görünümü Yapılandırma**](mail.md#görünümü-yapılandırma-1)
+  * [**Düz Metin E-postaları**](mail.md#düz-metin-e-postaları-1)
+  * [**Veriyi gör**](mail.md#veriyi-gör-1)
+  * [**Ekler**](mail.md#ekler-1)
+  * [**Satır İçi Ekler**](mail.md#ekler-2)
+* #### [Mail Gönderme](mail.md#mail-gönderme-1)
+  * [**Kuyruk (queue) Postası**](mail.md#kuyruk-postsası-1)
 
-### [Giriş](#giriş-1) 
+#### [Giriş](mail.md#giriş-1)
+
 Laravel, popüler [SwiftMailer](https://swiftmailer.symfony.com/docs/introduction.html) kütüphanesi üzerinden [SMTP](https://tr.wikipedia.org/wiki/SMTP), Mailgun, Postmark, Amazon SES ve sendmail sürücülerine sahip temiz ve basit bir API sağlayarak, seçtiğiniz yerel veya bulut tabanlı bir hizmet aracılığıyla hızlı bir şekilde posta göndermeye başlamanıza olanak tanır.
 
-#### [Konfigürasyon](#konfigürasyon-1) 
+[**Konfigürasyon**](mail.md#konfigürasyon-1)
+
 Laravelin e-posta yapılandırma dosyası config/mail.php dosyasında bulunur.
 
-###### varsayılan mail ayarları
-> config/mail.php
-Dosyasında ayarlar varsayılan olarak eklenmiştir. Kullandığınız mail servisine göre düzenleme yapmalısınız. 
+**varsayılan mail ayarları**
+
+> config/mail.php Dosyasında ayarlar varsayılan olarak eklenmiştir. Kullandığınız mail servisine göre düzenleme yapmalısınız.
+
 ```php
 'mailers' => [
         // ...
     ]
 ```
+
 içinden kullandığınız protokole göre düzenlenmesi gerekir varsayılan olarak _smtp_ geliyor.
 
 > Desteklenen protokoller
-* smtp 
-* sendmail 
-* mailgun 
-* ses 
-* postmark 
-* log 
+
+* smtp
+* sendmail
+* mailgun
+* ses
+* postmark
+* log
 * array
 
 Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
 
-```environment
+```
     MAIL_MAILER=smtp
     MAIL_HOST=smtp.mailtrap.io
     MAIL_PORT=2525
@@ -54,41 +62,47 @@ Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
     MAIL_FROM_ADDRESS=null
     MAIL_FROM_NAME="${APP_NAME}"
 ```
-* MAIL_MAILER
-    * Mail protokolünü belirtiyoruz
-* MAIL_HOST
-    * Kullandığımız mail servisinin hostu. Eğer gmail kullanacaksanız _smtp.gmail.com_ olarak değiştirin 
-* MAIL_PORT
-    * Mail portu smtp'de 587 veya 493
-* MAIL_USERNAME
-    * e-posta adresiniz
-* MAIL_PASSWORD
-    * e-posta adresinizin parolası
-* MAIL_ENCRYPTION
-    * ssl veya tls 
-* MAIL_FROM_ADDRESS
-    * e-posta adresiniz gönderildiğinde gösterilecek adres
-* MAIL_FROM_NAME
-    * e-posta adresiniz gönderildiğinde gösterilecek isim
 
-##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
+* MAIL\_MAILER
+  * Mail protokolünü belirtiyoruz
+* MAIL\_HOST
+  * Kullandığımız mail servisinin hostu. Eğer gmail kullanacaksanız _smtp.gmail.com_ olarak değiştirin
+* MAIL\_PORT
+  * Mail portu smtp'de 587 veya 493
+* MAIL\_USERNAME
+  * e-posta adresiniz
+* MAIL\_PASSWORD
+  * e-posta adresinizin parolası
+* MAIL\_ENCRYPTION
+  * ssl veya tls
+* MAIL\_FROM\_ADDRESS
+  * e-posta adresiniz gönderildiğinde gösterilecek adres
+* MAIL\_FROM\_NAME
+  * e-posta adresiniz gönderildiğinde gösterilecek isim
+
+[**Sürücü Önkoşulları**](mail.md#sürücü-önkoşulları-1)
+
 Mailgun ve Postmark gibi API tabanlı sürücüler genellikle SMTP sunucularından daha basit ve daha hızlıdır. Mümkünse, bu sürücülerden birini kullanmalısınız. Tüm API sürücüleri, Composer paket yöneticisi aracılığıyla kurulabilen [Guzzle HTTP](http://docs.guzzlephp.org/en/stable/) kütüphanesini gerektirir.
 
-```php 
+```php
     composer require guzzlehttp/guzzle
 ```
-#### Mailgun Sürücüsü
-Mailgun sürücüsünü kullanmak için önce [Guzzle](http://docs.guzzlephp.org/en/stable/)'ı yükleyin, ardından ```config/mail.php``` yapılandırma dosyanızdaki varsayılan seçeneği mailgun olarak ayarlayın. Ardından, ```config/services.php``` yapılandırma dosyanızın aşağıdaki seçenekleri içerdiğini doğrulayın:
 
-```php 
+**Mailgun Sürücüsü**
+
+Mailgun sürücüsünü kullanmak için önce [Guzzle](http://docs.guzzlephp.org/en/stable/)'ı yükleyin, ardından `config/mail.php` yapılandırma dosyanızdaki varsayılan seçeneği mailgun olarak ayarlayın. Ardından, `config/services.php` yapılandırma dosyanızın aşağıdaki seçenekleri içerdiğini doğrulayın:
+
+```php
 'mailgun' => [
     'domain' => env('MAILGUN_DOMAIN'),
     'secret' => env('MAILGUN_SECRET'),
     'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 ```
+
 Bu şekilde olup _.env_ dosyanızda düzenlemeleri size verildiği gibi doldurun
-```environment
+
+```
     MAIL_MAILER=mailgun
     MAIL_HOST=smtp.mailgun.org
     MAIL_PORT=587
@@ -96,33 +110,44 @@ Bu şekilde olup _.env_ dosyanızda düzenlemeleri size verildiği gibi doldurun
     MAILGUN_DOMAIN=subdomain.domain.com
     MAILGUN_SECRET=mailgun-api-key
 ```
-* MAIL_MAILER=mailgun
-    * Mail protokolünü belirtiyoruz.
-* MAIL_HOST=smtp.mailgun.org
-    * Kullandığımız mail servisinin hostu.
-* MAIL_FROM_ADDRESS=ornek_eposta@domain.com
-    * mailgun'de başvuru yaptığınız e-posta adresiniz
-* MAILGUN_DOMAIN=subdomain.domain.com
-    *   mailgun subdomain kullanmanızı tavsiye ediyor [mailgun döküman](https://documentation.mailgun.com/en/latest/)
-* MAILGUN_SECRET=mailgun-api-key
-    * mailgun tarafından size sunulan api-secret-key (anahtarı)
-    Mailgun konfigürasyonu bu kadar.
-#### Postmark Sürücüsü 
-    Postmark henüz test edilmediği için eklenmedi ilerleyen zamanlarda güncellenecektir.
 
-#### Amazon SES Sürücüsü 
-    Amazon SES henüz test edilmediği için eklenmedi ilerleyen zamanlarda güncellenecektir.
+* MAIL\_MAILER=mailgun
+  * Mail protokolünü belirtiyoruz.
+* MAIL\_HOST=smtp.mailgun.org
+  * Kullandığımız mail servisinin hostu.
+* MAIL\_FROM\_ADDRESS=ornek\_eposta@domain.com
+  * mailgun'de başvuru yaptığınız e-posta adresiniz
+* MAILGUN\_DOMAIN=subdomain.domain.com
+  * mailgun subdomain kullanmanızı tavsiye ediyor [mailgun döküman](https://documentation.mailgun.com/en/latest/)
+* MAILGUN\_SECRET=mailgun-api-key
+  * mailgun tarafından size sunulan api-secret-key (anahtarı) Mailgun konfigürasyonu bu kadar.
 
-### [Mail Oluşturma](#mail-oluşturma-1)
-Laravel'de kullandığınız servis tarafından her türlü e-posta gönderilebilir. Laravel posta gönderme sınıfları ```app/Mail``` dizininde bulunur.
-Posta gönderme sınıfı oluşturmak için aşşağıdaki komutunu çalıştırıyoruz.
+**Postmark Sürücüsü**
+
+```
+Postmark henüz test edilmediği için eklenmedi ilerleyen zamanlarda güncellenecektir.
+```
+
+**Amazon SES Sürücüsü**
+
+```
+Amazon SES henüz test edilmediği için eklenmedi ilerleyen zamanlarda güncellenecektir.
+```
+
+#### [Mail Oluşturma](mail.md#mail-oluşturma-1)
+
+Laravel'de kullandığınız servis tarafından her türlü e-posta gönderilebilir. Laravel posta gönderme sınıfları `app/Mail` dizininde bulunur. Posta gönderme sınıfı oluşturmak için aşşağıdaki komutunu çalıştırıyoruz.
+
 ```php
     php artisan make:mail YeniGonderi
 ```
-> Ben örnek için ```YeniGonderi``` diye isimlendirdim.
 
-### [Mail Yazma](#mail-yazma-1)
-E-posta gönderme işlemleri, yapılandırma derleme gibi işlemler  ```build()``` fonksiyonu'nda yapılır.
+> Ben örnek için `YeniGonderi` diye isimlendirdim.
+
+#### [Mail Yazma](mail.md#mail-yazma-1)
+
+E-posta gönderme işlemleri, yapılandırma derleme gibi işlemler `build()` fonksiyonu'nda yapılır.
+
 ```php
    /**
      * Build the message.
@@ -134,15 +159,18 @@ E-posta gönderme işlemleri, yapılandırma derleme gibi işlemler  ```build()`
         return $this->view('view.name');
     }
 ```
-> [Basit bir örnek](/mail_ornek.md) 
 
-### [Göndereni Yapılandırma](#göndereni-Yapılandırma-1)
+> [Basit bir örnek](../mail\_ornek.md)
+
+#### [Göndereni Yapılandırma](mail.md#göndereni-Yapılandırma-1)
+
 Öncelikle e-posta kimin tarafından gönderileceğini yapılandıralım. Göndereni yapılandırmanın iki yolu vardır.
 
-##### 1. Yolu
-```build``` fonksiyonu, ```Mailable``` sınıfına ait olan ```from``` fonksiyonu. Fonksiyon 2 parametre alır 1. si zorunlu ```$address``` 2. parametre ```$name``` varsayılan ```null``` 
+**1. Yolu**
 
-```php 
+`build` fonksiyonu, `Mailable` sınıfına ait olan `from` fonksiyonu. Fonksiyon 2 parametre alır 1. si zorunlu `$address` 2. parametre `$name` varsayılan `null`
+
+```php
 /**
  * Build the message.
  *
@@ -155,29 +183,39 @@ public function build()
 }
 ```
 
-##### 2. Yolu
-Eğer sadece 1 tane e-posta adresi kullanacaksanız 2. yol önerilir bu tüm ```Mailable``` sınıflarında kullanılır yani siz yeni bir ```Mailable``` oluşturdunuz orda göndereni belirtmenize gerek yoktur. 
-###### Yapılandırma 
-```config/mail.php``` dosyasını açıp
+**2. Yolu**
+
+Eğer sadece 1 tane e-posta adresi kullanacaksanız 2. yol önerilir bu tüm `Mailable` sınıflarında kullanılır yani siz yeni bir `Mailable` oluşturdunuz orda göndereni belirtmenize gerek yoktur.
+
+**Yapılandırma**
+
+`config/mail.php` dosyasını açıp
+
 ```php
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'ornek@ornek.com'),
         'name' => env('MAIL_FROM_NAME', 'ornek'),
     ],
 ```
-veya ```.env``` dosyasındanda düzenleyebilirsiniz.
 
-```environment
+veya `.env` dosyasındanda düzenleyebilirsiniz.
+
+```
 MAIL_FROM_ADDRESS=ornek@ornek.com
 MAIL_FROM_NAME="ornek isim"
 ```
-Bunlara ek olarak ```config/mail.php``` "yanıt adresi" de belirleyebilirsiniz 
-```php 
+
+Bunlara ek olarak `config/mail.php` "yanıt adresi" de belirleyebilirsiniz
+
+```php
     'reply_to' => ['address' => 'ornek@ornek.com', 'name'    => 'isim'
     ],
 ```
-#### [Görünümü Yapılandırma](#görünümü-yapılandırma-1)
-```Mailable``` sınıfında ```build``` fonksiyonu içinde e-postanın içeriğini işlerken hangi şablonun kullanılması gerektiğini belirtmek için ```view``` fonksiyonunu kullanabilirsiniz. Burda istediğiniz gibi stil tasarım yapabilirsiniz bunda özgürsünüz.
+
+[**Görünümü Yapılandırma**](mail.md#görünümü-yapılandırma-1)
+
+`Mailable` sınıfında `build` fonksiyonu içinde e-postanın içeriğini işlerken hangi şablonun kullanılması gerektiğini belirtmek için `view` fonksiyonunu kullanabilirsiniz. Burda istediğiniz gibi stil tasarım yapabilirsiniz bunda özgürsünüz.
+
 ```php
     /**
      * Build the message.
@@ -189,8 +227,11 @@ Bunlara ek olarak ```config/mail.php``` "yanıt adresi" de belirleyebilirsiniz
         return $this->view('email.mail_sayfasi');
     }
 ```
-#### [Düz Metin E-postaları](#düz-metin-e-postaları-1)
-E-postanızda düz metinde gönderebilirsiniz. Bunu da 
+
+[**Düz Metin E-postaları**](mail.md#düz-metin-e-postaları-1)
+
+E-postanızda düz metinde gönderebilirsiniz. Bunu da
+
 ```php
     /**
      * Build the message.
@@ -202,10 +243,11 @@ E-postanızda düz metinde gönderebilirsiniz. Bunu da
         return $this->text('email.duz_yazi_sayfasi');
     }
 ```
-#### [Veriyi gör](#veriyi-gör-1)
-Bu bölümde e-posta gönderirken şablona nasıl gönderilir onu gösterecem.
-```public``` 
-olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur onlar direkt şablonda kullanılabilir.
+
+[**Veriyi gör**](mail.md#veriyi-gör-1)
+
+Bu bölümde e-posta gönderirken şablona nasıl gönderilir onu gösterecem. `public` olarak tanımlanan veriler `build` fonksiyonunda işlenmesine gerek yoktur onlar direkt şablonda kullanılabilir.
+
 ```php
 <?php
     namespace App\Mail;
@@ -246,7 +288,9 @@ olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur o
         }
     }
 ```
-```$gonderi```, halka açık(public) olduğu için şablona otomatik olarak gider herhangi birşey yapmanıza gerek yok.
+
+`$gonderi`, halka açık(public) olduğu için şablona otomatik olarak gider herhangi birşey yapmanıza gerek yok.
+
 ```php
     <div style="margin:20px">
         <h5 style="text-align:center">
@@ -257,8 +301,10 @@ olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur o
         </p>
     </div>
 ```
-##### with fonksiyonuyla veri göndermek
-```with``` yöntemiyle, ```korumalı(protected), özel(private)``` olan veriler gönderilir.
+
+**with fonksiyonuyla veri göndermek**
+
+`with` yöntemiyle, `korumalı(protected), özel(private)` olan veriler gönderilir.
 
 ```php
     <?php
@@ -304,6 +350,7 @@ olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur o
         }
     }
 ```
+
 ```php
     <div style="margin:20px">
         <h5 style="text-align:center">
@@ -314,8 +361,11 @@ olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur o
         </p>
     </div>
 ```
-#### [Ekler](#ekler-1)
-E-postaya ek eklemek için ```Mailable``` sınıfının ```attach``` fonksiyonu kullanılır. ```attach``` fonksiyonu 2 parametre alır ```$file, array $options = []``` 1. parametre dosya yolu (zorunlu), 2. parametreyi bir sonraki bölümde ele alacağım. 
+
+[**Ekler**](mail.md#ekler-1)
+
+E-postaya ek eklemek için `Mailable` sınıfının `attach` fonksiyonu kullanılır. `attach` fonksiyonu 2 parametre alır `$file, array $options = []` 1. parametre dosya yolu (zorunlu), 2. parametreyi bir sonraki bölümde ele alacağım.
+
 ```php
 
     /**
@@ -328,9 +378,10 @@ E-postaya ek eklemek için ```Mailable``` sınıfının ```attach``` fonksiyonu 
                     ->attach( public_path("ekler") ."/ornek.jpg");
     }
 ```
->Ben kendim özel olarak dizin belirttim. 
-Bir dosya gönderirken dosya adı ve MIME tipi belirtebilirsiniz. Bu 2. parametredir. 
-```php 
+
+> Ben kendim özel olarak dizin belirttim. Bir dosya gönderirken dosya adı ve MIME tipi belirtebilirsiniz. Bu 2. parametredir.
+
+```php
     /**
      *  Mesaj derleme
      *  @return $this
@@ -345,18 +396,24 @@ Bir dosya gönderirken dosya adı ve MIME tipi belirtebilirsiniz. Bu 2. parametr
     }
 }
 ```
-### [Satır İçi Ekler](#ekler-2)
-E-postalarınıza satır içi resimler yerleştirmek genellikle zahmetlidir; ancak Laravel, e-postalarınıza resim eklemek ve uygun CID'yi almak için uygun bir yol sağlar. Satır içi bir görüntüyü ekleme için, e-posta şablonunuzdaki ```$message``` değişkenindeki embed yöntemini kullanın. Laravel, ```$message``` değişkenini otomatik olarak tüm e-posta şablonlarınız için kullanılabilir hale getirir, böylece manuel olarak geçirme konusunda endişelenmenize gerek kalmaz:
+
+#### [Satır İçi Ekler](mail.md#ekler-2)
+
+E-postalarınıza satır içi resimler yerleştirmek genellikle zahmetlidir; ancak Laravel, e-postalarınıza resim eklemek ve uygun CID'yi almak için uygun bir yol sağlar. Satır içi bir görüntüyü ekleme için, e-posta şablonunuzdaki `$message` değişkenindeki embed yöntemini kullanın. Laravel, `$message` değişkenini otomatik olarak tüm e-posta şablonlarınız için kullanılabilir hale getirir, böylece manuel olarak geçirme konusunda endişelenmenize gerek kalmaz:
+
 ```php
     <body>
         Fotoğraf burda
         <img src="{{$message->embed($resimDizini)}}">
     </body>
 ```
-<img src="fotograflar/warning.png" style="margin:20px;" width="100px" height="100px"/> ```$message``` değişkeni otomatik olarak tanımlı kendiniz tanımlamanıza gerek yoktur.
 
-### [Mail Gönderme](#mail-gönderme-1)
-Bir mesaj göndermek için ```Mail``` sınıfının ```to``` fonksiyonunu kullanın, ```send``` fonksiyonu bir sınıf kabul eder. 
+![](fotograflar/warning.png) `$message` değişkeni otomatik olarak tanımlı kendiniz tanımlamanıza gerek yoktur.
+
+#### [Mail Gönderme](mail.md#mail-gönderme-1)
+
+Bir mesaj göndermek için `Mail` sınıfının `to` fonksiyonunu kullanın, `send` fonksiyonu bir sınıf kabul eder.
+
 ```php
 <?php
 
@@ -379,11 +436,14 @@ class GonderiController extends Controller
     }
 }
 ```
-#### [Kuyruk (queue) Postası](#kuyruk-postsası-1)
+
+[**Kuyruk (queue) Postası**](mail.md#kuyruk-postsası-1)
+
 E-posta gönderme işlemleri çok uzayabildiğinden, dolayı çoğu geliştirici e-postaları arkaplanda sıraya almayı tercih eder. Laravel'de [kuyruk(queue)](https://laravel.com/docs/7.x/queues) API'sini kullanarak bunu kolaylaştırır. E-posta alıcılarını ve mesajı belirledikten sonra Mail cephesinde kuyruk cephesi belirlenir.
+
 ```php
 Mail::to($request->user()->mail)
     ->queue(new OrderShipped($gonderi));
 ```
 
-# Devamı için yukarda belirttiğim kaynağa göz atın
+## Devamı için yukarda belirttiğim kaynağa göz atın

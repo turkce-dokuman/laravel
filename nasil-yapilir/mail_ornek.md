@@ -1,20 +1,22 @@
+# mail\_ornek
+
 Laravelde posta gönderme işlemlerinde html dosyası gönderilir. Kullancıya göndermek istediğiniz herşey oraya yazılır. Örnek göstererek açıklamaya çalışacağım.
 
-```resources/views/``` _mail_ diye bir dizin oluşturup içinde ```yeni_gonderi.blade.php``` dosyası oluşturacağım.
+`resources/views/` _mail_ diye bir dizin oluşturup içinde `yeni_gonderi.blade.php` dosyası oluşturacağım.
 
-```php artisan make:controller GonderiController``` diye bir controller oluşturacağım.
-Sadece örnek göstermek amacıyla controllerde herşeyi statik yapacağım mantığı göstermek amacıyla.
+`php artisan make:controller GonderiController` diye bir controller oluşturacağım. Sadece örnek göstermek amacıyla controllerde herşeyi statik yapacağım mantığı göstermek amacıyla.
 
-```app/Http/Controllers/GonderiController.php     ``` dosyasına 
+`app/Http/Controllers/GonderiController.php` dosyasına
+
 ```php
  use App\Mail\YeniGonderi; 
  use Illuminate\Support\Facades\Mail;
 ```
-```App\Mail\YeniGonderi``` benim posta göndermem için kullandığım sınıf.
-```Illuminate\Support\Facades\Mail``` postayı kime göndereceğimizi ve göndermemiz için kullanılan sınıf.
-bunları dahil ediyorum
 
-```YeniGonderi.php``` dosyasına girip
+`App\Mail\YeniGonderi` benim posta göndermem için kullandığım sınıf. `Illuminate\Support\Facades\Mail` postayı kime göndereceğimizi ve göndermemiz için kullanılan sınıf. bunları dahil ediyorum
+
+`YeniGonderi.php` dosyasına girip
+
 ```php
 namespace App\Mail;
 
@@ -50,7 +52,9 @@ class YeniGonderi extends Mailable
     }
 }
 ```
-```app/Http/Controllers/GonderiController.php```
+
+`app/Http/Controllers/GonderiController.php`
+
 ```php
 namespace App\Http\Controllers;
 
@@ -69,14 +73,15 @@ class GonderiController extends Controller
 }
 ```
 
-```mail/yeni_gonderi.blade.php``` dosyasıda bu şekilde
-```blade
+`mail/yeni_gonderi.blade.php` dosyasıda bu şekilde
+
+```
 Merhaba {{$alici_ismi}},
 
 Mesajınız : {{$mesaj}}
 ```
-#### Sonuç  
 
-![Örnek 1](fotograflar/mail_ornek.png)
+**Sonuç**
 
-#### 
+![Örnek 1](fotograflar/mail\_ornek.png)
+
