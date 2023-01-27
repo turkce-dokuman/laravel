@@ -1,4 +1,4 @@
-# Laravel Türkçe Doküman
+# 🚀 Laravel Türkçe Doküman
 
 Laravel, popüler bir PHP framework'üdür ve web uygulamaları geliştirme işlemlerini hızlandıran ve kolaylaştıran özellikleri vardır. Bu doküman, Türkçe kaynakları arttırmak amacıyla yazılmıştır ve Laravel topluluğuna yöneliktir. Bu doküman, Laravel'in temel özelliklerini ve önemli kavramlarını anlatacak ve okuyuculara bu framework'ü kullanmayı öğretmeyi hedeflemektedir. Bu doküman, Laravel ile ilgili bilgi sahibi olmayanlar için de yardımcı olacaktır ve bu framework'ü ilk kez kullanmaya başlamak isteyenler için de işe yarayacaktır. Umarım bu doküman, Laravel topluluğunu büyütmekte ve Türkçe kaynakları arttırmakta yardımcı olur.
 
