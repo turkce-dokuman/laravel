@@ -1,14 +1,14 @@
-# Table of contents
+# İçerikler
 
 * [🚀 Laravel Türkçe Doküman](README.md)
-* [Kurulum](kurulum.md)
-* [Yapılandırma](yapilandirma.md)
-* [Dizin Yapısı](dizin-yapisi.md)
-* [Yaşam Döngüsü](yasam-doenguesue.md)
-* [Servis Sağlayıcıları](servis-saglayicilari.md)
-* [Routing (Yönlendirme)](routing-yoenlendirme.md)
+* [Kurulum](installation.md)
+* [Yapılandırma](configuration.md)
+* [Dizin Yapısı](structure.md)
+* [Yaşam Döngüsü](lifecycle.md)
+* [Servis Sağlayıcıları](providers.md.md)
+* [Routing (Yönlendirme)](routing.md)
 * [Middleware](middleware.md)
-* [Controller](controller.md)
+* [Controller](controllers.md)
 * [Nasıl Yapılır](nasil-yapilir/README.md)
   * [laravel\_paket\_yayinlama](nasil-yapilir/laravel\_paket\_yayinlama.md)
   * [mail](nasil-yapilir/mail.md)
