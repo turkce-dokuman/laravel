@@ -1,11 +1,11 @@
-# İçerikler
+# Table of contents
 
 * [🚀 Laravel Türkçe Doküman](README.md)
 * [Kurulum](installation.md)
 * [Yapılandırma](configuration.md)
 * [Dizin Yapısı](structure.md)
 * [Yaşam Döngüsü](lifecycle.md)
-* [Servis Sağlayıcıları](providers.md.md)
+* [Servis Sağlayıcıları](servis-saglayicilari.md)
 * [Routing (Yönlendirme)](routing.md)
 * [Middleware](middleware.md)
 * [Controller](controllers.md)
